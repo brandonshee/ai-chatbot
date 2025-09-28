@@ -1,0 +1,93 @@
+npx create-next-app@latest shee-portfolio
+cd shee-portfolio
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// pages/index.js
+export default function Home() {
+  return (
+    <main className="bg-[#0F172A] text-white min-h-screen px-6 py-12 font-sans">
+      <section className="text-center">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          Shee Brandon Technologies
+        </h1>
+        <p className="mt-4 text-lg text-gray-300">
+          Empowering coders, creators, and dreamers through tech education, branding, and mentorship.
+        </p>
+        <a href="#contact" className="mt-6 inline-block px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700">
+          Work With Me
+        </a>
+      </section>
+
+      <section id="about" className="py-12">
+        <h2 className="text-3xl font-semibold">About Me</h2>
+        <p className="mt-4 text-gray-300">
+          I’m Shee — a visionary technologist, creative mentor, and founder of Shee Brandon Technologies.
+          My mission is to make tech education accessible, branding unforgettable, and mentorship empowering.
+          I blend full-stack development, graphic design, and storytelling to help others build their digital dreams.
+        </p>
+      </section>
+
+      <section id="skills" className="py-12">
+        <h2 className="text-3xl font-semibold">Tech Skills</h2>
+        <ul className="mt-4 grid grid-cols-2 gap-4 text-gray-300">
+          <li>Frontend: HTML, CSS, JavaScript, React, Next.js</li>
+          <li>Backend: Node.js, Express, PHP</li>
+          <li>Databases: MySQL, MongoDB, Firebase</li>
+          <li>Design: Photoshop, Canva, Figma</li>
+          <li>Deployment: Vercel, GitHub Pages</li>
+          <li>Branding & CV Writing</li>
+          <li>Tech Troubleshooting & Mentorship</li>
+        </ul>
+      </section>
+
+      <section id="projects" className="py-12">
+        <h2 className="text-3xl font-semibold">What I Offer</h2>
+        <ul className="mt-4 text-gray-300 space-y-2">
+          <li>🚀 Coding Courses for Beginners</li>
+          <li>🎨 Branding & Portfolio Design</li>
+          <li>📄 CV Writing & Career Mentorship</li>
+          <li>🧩 Tech Troubleshooting & Digital Support</li>
+        </ul>
+      </section>
+
+      <section id="contact" className="py-12">
+        <h2 className="text-3xl font-semibold">Let’s Connect</h2>
+        <p className="mt-4 text-gray-300">
+          Email: <a href="mailto:sheebradon261@gmail.com" className="text-pink-400">sheebradon261@gmail.com</a>
+        </p>
+        <p className="mt-2 text-gray-300">
+          Socials: <a href="https://instagram.com/sheebrandon" className="text-pink-400">@sheebrandon</a>
+        </p>
+      </section>
+    </main>
+  );
+}
+import { Html, Head, Main, NextScript } from 'next/document'
+
+export default function Document() {
+  return (
+    <Html>
+      <Head>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+      </Head>
+      <body className="font-['Orbitron']">
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  )
+}
